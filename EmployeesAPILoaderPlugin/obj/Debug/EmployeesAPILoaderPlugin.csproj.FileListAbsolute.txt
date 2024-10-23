@@ -1,0 +1,17 @@
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\EmployeesLoader.Plugin.dll
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\EmployeesViewer.Plugin.dll
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\EmployeesViewer.Plugin.pdb
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\EmployeesAPILoaderPlugin.dll
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\EmployeesAPILoaderPlugin.pdb
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\Newtonsoft.Json.dll
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\NLog.dll
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\PhoneApp.exe
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\PhoneApp.pdb
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\PhoneApp.exe.config
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\Newtonsoft.Json.xml
+D:\task\Application\EmployeesAPILoaderPlugin\bin\Debug\NLog.xml
+D:\task\Application\EmployeesAPILoaderPlugin\obj\Debug\EmployeesAPILoaderPlugin.csproj.AssemblyReference.cache
+D:\task\Application\EmployeesAPILoaderPlugin\obj\Debug\EmployeesAPILoaderPlugin.csproj.CoreCompileInputs.cache
+D:\task\Application\EmployeesAPILoaderPlugin\obj\Debug\Employee.6E756F24.Up2Date
+D:\task\Application\EmployeesAPILoaderPlugin\obj\Debug\EmployeesAPILoaderPlugin.dll
+D:\task\Application\EmployeesAPILoaderPlugin\obj\Debug\EmployeesAPILoaderPlugin.pdb
