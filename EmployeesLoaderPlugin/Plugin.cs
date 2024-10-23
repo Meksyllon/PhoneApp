@@ -24,7 +24,7 @@ namespace EmployeesLoaderPlugin
         logger.Info($"Loaded {employeesList.Count()} employees");
 
         var resultList = args.ToList();
-        resultList.AddRange(employeesList);
+        resultList.AddRange(employeesList.Cast<DataTransferObject>());
         return resultList;
     }
   }

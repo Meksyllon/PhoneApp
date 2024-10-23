@@ -26,7 +26,7 @@ namespace EmployeesLoaderPlugin
 
       string command = "";
 
-      while(command != "quit" || command != "q")
+      while(command != "quit" && command != "q")
       {
         Console.Write("> ");
         command = Console.ReadLine().ToLower();
@@ -44,14 +44,14 @@ namespace EmployeesLoaderPlugin
           case "add":
             Console.Write("Name: ");
             string name = Console.ReadLine();
-            if (!name.All(l => char.IsLetter(l) || l == ' '))
+            if (!name.All(l => char.IsLetter(l) || l == ' ') || name.Length == 0)
             {
                 logger.Error("Invalid employee name!");
             } else
               {
               Console.Write("Phone: ");
               string phone = Console.ReadLine();
-              if (!name.All(l => char.IsDigit(l) || l == ' ' || l == '+' || l == '-'))
+              if (!phone.All(l => char.IsDigit(l) || l == ' ' || l == '+' || l == '-') || phone.Length == 0)
               {
                 logger.Error("Invalid phone number!");
               } else
