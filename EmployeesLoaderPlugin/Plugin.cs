@@ -17,12 +17,15 @@ namespace EmployeesLoaderPlugin
     private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
     public IEnumerable<DataTransferObject> Run(IEnumerable<DataTransferObject> args)
     {
-      logger.Info("Loading employees");
+        logger.Info("Loading employees");
 
-      var employeesList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EmployeesDTO>>(EmployeesLoaderPlugin.Properties.Resources.EmployeesJson);
+        var employeesList = Newtonsoft.Json.JsonConvert
+            .DeserializeObject<List<EmployeesDTO>>(EmployeesLoaderPlugin.Properties.Resources.EmployeesJson);
+        logger.Info($"Loaded {employeesList.Count()} employees");
 
-      logger.Info($"Loaded {employeesList.Count()} employees");
-      return employeesList.Cast<DataTransferObject>();
+        var resultList = args.ToList();
+        resultList.AddRange(employeesList);
+        return resultList;
     }
   }
 }

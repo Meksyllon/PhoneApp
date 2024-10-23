@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using PhoneApp.Domain;
 using PhoneApp.Domain.Attributes;
@@ -25,10 +26,10 @@ namespace EmployeesLoaderPlugin
 
       string command = "";
 
-      while(!command.ToLower().Contains("quit"))
+      while(command != "quit" || command != "q")
       {
         Console.Write("> ");
-        command = Console.ReadLine();
+        command = Console.ReadLine().ToLower();
 
         switch(command)
         {
@@ -43,9 +44,24 @@ namespace EmployeesLoaderPlugin
           case "add":
             Console.Write("Name: ");
             string name = Console.ReadLine();
-            Console.Write("Phone: ");
-            string phone = Console.ReadLine();
-            Console.WriteLine($"{name} added to employees");
+            if (!name.All(l => char.IsLetter(l) || l == ' '))
+            {
+                logger.Error("Invalid employee name!");
+            } else
+              {
+              Console.Write("Phone: ");
+              string phone = Console.ReadLine();
+              if (!name.All(l => char.IsDigit(l) || l == ' ' || l == '+' || l == '-'))
+              {
+                logger.Error("Invalid phone number!");
+              } else
+                {
+                  var newEmployee = new EmployeesDTO() { Name = name };
+                  newEmployee.AddPhone(phone);
+                  employeesList.Add(newEmployee);
+                  Console.WriteLine($"{name} added to employees");
+                }
+              }                        
             break;
           case "del":
             Console.Write("Index of employee to delete: ");
@@ -54,9 +70,13 @@ namespace EmployeesLoaderPlugin
             {
               logger.Error("Not an index or not an int value!");
             } else {
-              if(indexToDelete > 0 && indexToDelete < employeesList.Count())
+              if(indexToDelete >= 0 && indexToDelete < employeesList.Count())
               {
                 employeesList.RemoveAt(indexToDelete);
+              }
+              else
+              {
+                logger.Error("No employee was found under this index");
               }
             }
             break;
